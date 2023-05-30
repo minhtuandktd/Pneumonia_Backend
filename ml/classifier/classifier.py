@@ -8,7 +8,7 @@ device = torch.device("cpu")
 
 class Classifier:
     def __init__(self):
-        self.model = torch.load(os.path.join(absolute_path, "weights/Pneumonia_transfered_on_EfficentB0.pt"))
+        self.model = torch.load(os.path.join(absolute_path, "weights/Pneumonia_transfered_on_EfficentB0.pt"), map_location=torch.device('cpu'))
         self.model = self.model.to(device)
         self.model.eval()
 
